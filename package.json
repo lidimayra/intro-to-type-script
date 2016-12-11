@@ -1,0 +1,19 @@
+{
+  "name": "intro-to-type-script",
+  "version": "1.0.0",
+  "description": "edX course - Microsoft: DEV201x Introduction to TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidimayra/intro-to-type-script.git"
+  },
+  "author": "Lidiane Taquehara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lidimayra/intro-to-type-script/issues"
+  },
+  "homepage": "https://github.com/lidimayra/intro-to-type-script#readme"
+}
