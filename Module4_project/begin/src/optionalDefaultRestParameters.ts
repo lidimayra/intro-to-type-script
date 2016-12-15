@@ -1,5 +1,4 @@
 ﻿(function () {
-
     //Optional parameters
     //Add city and state display capabilities
     function buildAddressOptional(address1: string, address2?: string, city?: string, state?: string) {
