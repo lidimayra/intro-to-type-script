@@ -1,5 +1,5 @@
 ﻿class Renderer {
-  
+
     constructor(public recipeCategoriesSummary: RecipeCategories<IRecipeCategorySummary>) {
         if (recipeCategoriesSummary) {
             this.renderCategories(recipeCategoriesSummary);
@@ -34,7 +34,6 @@
         //Update description
         var el = (<HTMLSelectElement> document.getElementById('recipeDesc'));
         el.innerHTML = category.description;
-
         this.renderExamples(category);
 
     }
@@ -47,7 +46,7 @@
         examples.value = '';
 
         var html = '<ol>';
-        for (var i = 0, len = category.examples.length; i < len; i++) { 
+        for (var i = 0, len = category.examples.length; i < len; i++) {
             var example = category.examples[i];
             var ingredients = example.ingredients.map((ingredient) => {
                 return ingredient.name;
@@ -67,4 +66,4 @@
         var examples = (<HTMLSelectElement> document.getElementById('examples'));
         examples.value = 'Unable to load data!';
     }
-} 
+}

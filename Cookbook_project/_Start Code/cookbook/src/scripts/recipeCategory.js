@@ -26,17 +26,10 @@ var RecipeCategory = (function (_super) {
          c. Assign the recipeCategory parameter's examples property to the examples property in this class.
 
     */
-    function RecipeCategory(recipeCategory, name, foodGroups) {
-        _super.call(this, name, foodGroups);
-        recipeCategory.description = this.description;
-        recipeCategory.examples = this.examples;
-        ;
-        ;
-        ;
-        ;
-        ;
-        ;
-        ;
+    function RecipeCategory(recipeCategory) {
+        _super.call(this, recipeCategory.name, recipeCategory.foodGroups);
+        this.description = recipeCategory.description;
+        this.examples = recipeCategory.examples;
     }
     return RecipeCategory;
 }(BaseRecipeCategory));

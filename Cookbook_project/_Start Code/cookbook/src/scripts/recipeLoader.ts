@@ -1,7 +1,10 @@
 ﻿/// <reference path="typings/jquery.d.ts" />
+///<reference path="recipeCategories.ts" />
+///<reference path="recipeCategory.ts" />
+///<reference path="recipeCategorySummary.ts" />
 
 class RecipeLoader {
-  
+
     constructor(public url: string) {}
 
     //TODO (GENERICS EXERCISE)
@@ -11,34 +14,39 @@ class RecipeLoader {
     //3. Take a moment to explore how the JQueryPromise interface uses generics
     load() : any {
         return $.getJSON(this.url).then((data: any) => {
-            var recipeData = this.mapData(data);      
-            return recipeData; 
+            var recipeData = this.mapData(data);
+            return recipeData;
         });
     }
 
     mapData(data: any) : IRecipeData {
         if (data) {
             let categories: any[] = data.recipeCategories;
-            
+
             //TODO (INTERFACES EXERCISE)
             //Pass IRecipeCategory as the type to the generic below
             var recipeCategories = new RecipeCategories<RecipeCategory>();
-            
+
             //TODO (INTERFACES EXERCISE)
             //Pass IRecipeCategorySummary as the type to the generic below
             var recipeCategoriesSummary = new RecipeCategories<RecipeCategorySummary>();
-            
+
             categories.forEach((category: any) => {
-              
+
                 //TODO (CONSTRUCTORS EXERCISE)
                 //Change the RecipeCategory code below so that the property values are
                 //passed into the constructor rather than set individually.
-                let recipeCategory = new RecipeCategory();
-                recipeCategory.name = category.title;
-                recipeCategory.foodGroups = this.getFoodGroups(category),
-                recipeCategory.description = category.details,
-                recipeCategory.examples = this.getExamples(category);
-                
+                let recipeCategory = new RecipeCategory({
+                  name: category.title,
+                  foodGroups: this.getFoodGroups(category),
+                  description: category.details,
+                  examples: this.getExamples(category)
+                });
+                // recipeCategory.name = category.title;
+                // recipeCategory.foodGroups = this.getFoodGroups(category),
+                // recipeCategory.description = category.details,
+                // recipeCategory.examples = this.getExamples(category);
+
                 recipeCategories.items.push(recipeCategory);
 
                 let recipeCategorySummary = new RecipeCategorySummary({
@@ -47,7 +55,7 @@ class RecipeLoader {
                 });
                 recipeCategoriesSummary.items.push(recipeCategorySummary);
             });
-                      
+
             return {
                recipeCategories: recipeCategories,
                recipeCategoriesSummary: recipeCategoriesSummary
@@ -61,7 +69,7 @@ class RecipeLoader {
     getFoodGroups(category: any) : FoodGroup[] {
         //Map foodgroups data to TS object
         return category.foodGroups.map((foodGroup: any) => {
-          
+
             //TODO (CONSTRUCTORS EXERCISE)
             //Change the FoodGroup code below so that the property value is
             //passed into the constructor rather than set individually.
@@ -72,7 +80,7 @@ class RecipeLoader {
     }
 
     getExamples(category: any) : IExample[] {
-        return category.examples.map((example: any) => { 
+        return category.examples.map((example: any) => {
             return new Example({
                 name: example.name,
                 ingredients: this.getIngredients(example),
@@ -86,4 +94,4 @@ class RecipeLoader {
             return new Ingredient(value);
         });
     }
-} 
+}

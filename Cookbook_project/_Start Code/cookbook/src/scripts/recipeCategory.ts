@@ -25,12 +25,9 @@ class RecipeCategory extends BaseRecipeCategory {
          c. Assign the recipeCategory parameter's examples property to the examples property in this class.
 
     */
-    constructor(recipeCategory: RecipeCategory, name: string, foodGroups: FoodGroup[]) {
-      super(name, foodGroups);
-      recipeCategory.description = this.description;
-      recipeCategory.examples = this.examples;;;;;;;;
+    constructor(recipeCategory: RecipeCategory) {
+        super(recipeCategory.name, recipeCategory.foodGroups);
+        this.description = recipeCategory.description;
+        this.examples = recipeCategory.examples;
     }
-
-
-
 }
