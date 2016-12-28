@@ -37,10 +37,10 @@ class RecipeLoader {
                 //Change the RecipeCategory code below so that the property values are
                 //passed into the constructor rather than set individually.
                 let recipeCategory = new RecipeCategory({
-                  name: category.title,
-                  foodGroups: this.getFoodGroups(category),
-                  description: category.details,
-                  examples: this.getExamples(category)
+                    name: category.title,
+                    foodGroups: this.getFoodGroups(category),
+                    description: category.details,
+                    examples: this.getExamples(category)
                 });
                 // recipeCategory.name = category.title;
                 // recipeCategory.foodGroups = this.getFoodGroups(category),
@@ -73,8 +73,7 @@ class RecipeLoader {
             //TODO (CONSTRUCTORS EXERCISE)
             //Change the FoodGroup code below so that the property value is
             //passed into the constructor rather than set individually.
-            var group = new FoodGroup();
-            group.name = foodGroup.title;
+            var group = new FoodGroup(foodGroup.title);
             return group;
         });
     }

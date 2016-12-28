@@ -64,8 +64,7 @@ var RecipeLoader = (function () {
             //TODO (CONSTRUCTORS EXERCISE)
             //Change the FoodGroup code below so that the property value is
             //passed into the constructor rather than set individually.
-            var group = new FoodGroup();
-            group.name = foodGroup.title;
+            var group = new FoodGroup(foodGroup.title);
             return group;
         });
     };
