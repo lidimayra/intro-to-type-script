@@ -1,4 +1,3 @@
-// Example 1
 var Plant = (function () {
     function Plant() {
     }
@@ -7,7 +6,6 @@ var Plant = (function () {
 // This works because the definitions of IPlant and Plant are identical
 var p;
 p = new Plant();
-// Example 2
 var trees = (function () {
     function trees() {
     }
