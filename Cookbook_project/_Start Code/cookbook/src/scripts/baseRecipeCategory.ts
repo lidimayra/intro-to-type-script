@@ -5,17 +5,17 @@ class BaseRecipeCategory {
     //TODO (PROPERTIES EXERCISE)
     //1. Create private "_name" (string type) and "_foodGroups" (FoodGroup[] type) member variables/fields.
     //2. Assign the "_foodGroups" field a value of [];
-    private _name: string;
-    private _foodGroups: FoodGroup[] = [];
+    // private _name: string;
+    // private _foodGroups: FoodGroup[] = [];
 
 
     //TODO (PROPERTIES EXERCISE)
     //1.  Create get and set blocks for "name" (string type) and "foodGroups" (FoodGroup[] type) properties.
     //2. The get block should return _name while the set block should assign the value to _name.
-    get name(): string { return this._name; }
-    get foodGroups(): FoodGroup[] { return this._foodGroups; }
-    set name(name: string) { this._name = name; }
-    set foodGroups(foodGroups: FoodGroup[]) { this._foodGroups = foodGroups; }
+    // get name(): string { return this._name; }
+    // get foodGroups(): FoodGroup[] { return this._foodGroups; }
+    // set name(name: string) { this._name = name; }
+    // set foodGroups(foodGroups: FoodGroup[]) { this._foodGroups = foodGroups; }
 
 
     /*
@@ -30,8 +30,12 @@ class BaseRecipeCategory {
       3. Create a new constructor that accepts "name" and "foodGroups" as parameters.
       4. Within the constructor, assign the parameter values to the "name" and "foodGroups" properties respectively.
     */
-
-
+    name: string;
+    foodGroups: FoodGroup[] = [];
+    constructor(name: string, foodGroups: FoodGroup[]) {
+        this.name = name;
+        this.foodGroups = foodGroups;
+    }
 
 
 }
