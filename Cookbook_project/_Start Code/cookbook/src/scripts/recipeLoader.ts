@@ -25,11 +25,11 @@ class RecipeLoader {
 
             //TODO (INTERFACES EXERCISE)
             //Pass IRecipeCategory as the type to the generic below
-            var recipeCategories = new RecipeCategories<RecipeCategory>();
+            var recipeCategories = new RecipeCategories<IRecipeCategory>();
 
             //TODO (INTERFACES EXERCISE)
             //Pass IRecipeCategorySummary as the type to the generic below
-            var recipeCategoriesSummary = new RecipeCategories<RecipeCategorySummary>();
+            var recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
 
             categories.forEach((category: any) => {
 
