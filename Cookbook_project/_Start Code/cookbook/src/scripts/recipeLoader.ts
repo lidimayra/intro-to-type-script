@@ -12,7 +12,7 @@ class RecipeLoader {
     //   This will provide the caller with much better code help as they work with the return value.
     //2. If you're in VS Code, right-click on JQueryPromise and select "Peek Definition" from the menu
     //3. Take a moment to explore how the JQueryPromise interface uses generics
-    load() : any {
+    load() : JQueryPromise<IRecipeData> {
         return $.getJSON(this.url).then((data: any) => {
             var recipeData = this.mapData(data);
             return recipeData;
@@ -25,11 +25,11 @@ class RecipeLoader {
 
             //TODO (INTERFACES EXERCISE)
             //Pass IRecipeCategory as the type to the generic below
-            var recipeCategories = new RecipeCategories<RecipeCategory>();
+            var recipeCategories = new RecipeCategories<IRecipeCategory>();
 
             //TODO (INTERFACES EXERCISE)
             //Pass IRecipeCategorySummary as the type to the generic below
-            var recipeCategoriesSummary = new RecipeCategories<RecipeCategorySummary>();
+            var recipeCategoriesSummary = new RecipeCategories<IRecipeCategorySummary>();
 
             categories.forEach((category: any) => {
 

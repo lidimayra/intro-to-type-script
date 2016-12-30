@@ -6,7 +6,7 @@
 //TODO (CONSTRUCTORS EXERCISE)
 //2. Delete the name and foodGroups properties.
 //1. Add code so that RecipeCategory inherits from BaseRecipeCategory
-class RecipeCategory extends BaseRecipeCategory {
+class RecipeCategory extends BaseRecipeCategory  implements IRecipeCategory {
     description: string;
     examples: IExample[];
     // name: string;
